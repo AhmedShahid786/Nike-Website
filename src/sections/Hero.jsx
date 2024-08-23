@@ -1,13 +1,62 @@
 import { Button, ShoeCard } from "../components";
-import { arrowRight } from "../assets/icons";
 import { shoes, statistics } from "../constants";
 import { bigShoe1 } from "../assets/images";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Typed from "typed.js";
 
 const Hero = () => {
+  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
-  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1)
+  //Typed JS
+  useEffect(() => {
+    // Initialize Typed.js
+    const options = {
+      typeSpeed: 100, // Typing speed in milliseconds
+      backSpeed: 50, // Speed for deleting text
+      backDelay: 1000, // Delay before starting to delete text
+      startDelay: 1000, // Delay before starting typing
+      loop: true, // Loop indefinitely
+      showCursor: false,//Hide Cursor
+    };
+
+    const option1 = {
+      strings: ["The New Arrival"], // Text you want to type
+      ...options
+    };
+    const option2 = {
+      strings: ["Nike"], // Text you want to type
+      ...options
+    };
+    const option3 = {
+      strings: ["Shoes"], // Text you want to type
+      ...options,
+    };
+
+    const typed = new Typed(".typedText", option1, {
+      onComplete: () => {
+        const typed2 = new Typed(".typedText2", {
+          option2,
+          onComplete: () => {
+            const typed3 = new Typed(".typedText3", option3);
+
+            return ()=>{
+              typed.destroy();
+              typed2.destroy();
+              typed3.destroy();
+            }
+          },
+        });
+      },
+    });
+
+    return () => {
+      // Cleanup typed instance on component unmount
+      typed.destroy();
+      // typed2.destroy();
+      // typed3.destroy();
+    };
+  }, []);
 
   return (
     <section
@@ -15,36 +64,35 @@ const Hero = () => {
       className="w-full flex flex-col xl:flex-row justify-center min-h-screen gap-10 max-container"
     >
       <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28">
-        <p className="text-xl font-montserrat text-coral-red">
+        <p className="text-xl font-montserrat text-coral-red dark-text-special">
           Our Summer Collections
         </p>
 
-        <h1
-          id="typed-stringsnpm e"
-          className="mt-10 font-palanquin text-8xl max-sm:text[72] max-sm:leading[82] font-bold"
-        >
-          <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
+        <h1 className="mt-10 font-palanquin text-8xl max-sm:text[72] max-sm:leading[82] font-bold">
+          <span className="typedText xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
             The New Arrival
           </span>
           <br />
-          <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
+          <span className="typedText2 text-coral-red inline-block mt-3 dark-text-special">
+            Nike
+          </span> Shoes
         </h1>
 
-        <p className="font-montserrat text-lg text-slate-gray text-lg leadig-8 mt-6 max-sm:mb-14 sm:max-w-sm">
+        <p className="font-montserrat text-lg dark-text-p text-lg leadig-8 mt-6 max-sm:mb-14 sm:max-w-sm">
           Discover stylish Nike arrivals, quality comfort and innovation for
           your active life.
         </p>
       </div>
 
       <div className="sm:ml-16 ml-8 mt-0">
-        <Button label="Shop Now" iconURL={arrowRight} />
+        <Button label="Shop Now" iconURL={1} />
       </div>
 
       <div className="relative max-xl:padding-x flex justify-start items-start flex-wrap w-full xl:mt-20 gap-16">
         {statistics.map((stat, ind) => (
           <div key={ind}>
             <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
-            <p className="font-montserrat text-slate-gray leading-7">
+            <p className="font-montserrat dark-text-p leading-7">
               {stat.label}
             </p>
           </div>
@@ -64,7 +112,7 @@ const Hero = () => {
               <ShoeCard
                 index={index}
                 imgURL={image}
-                changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
+                changeBigShoeImage={(shoe) => setBigShoeImg(`shoe`)}
                 bigShoeImg={bigShoeImg}
               />
             </div>

@@ -1,4 +1,4 @@
-import { arrowRight } from "../assets/icons";
+// import { arrowRight } from "../assets/icons";
 import { offer } from "../assets/images";
 import { Button } from "../components";
 
@@ -16,7 +16,8 @@ const SpecialOffers = () => {
 
         <div className="flex flex-col flex-1">
           <h2 className="font-palanquin text-4xl capitalize max-sm:text[72] max-sm:leading[82] font-bold lg:max-w-lg">
-            <span className="text-coral-red">Special </span>Offer
+            <span className="text-coral-red dark-text-special">Special </span>
+            Offer
           </h2>
 
           <p className="mt-4 lg:max-w-lg info-text">
@@ -31,11 +32,12 @@ const SpecialOffers = () => {
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
-            <Button label="Shop Now" iconURL={arrowRight}/>
-            <Button label="Learn More"
-            bgColor = "bg-white"
-            borderColor = "border-slate-gray"
-            textColor = "text-slate-gray"
+            <Button label="Shop Now" iconURL={1} />
+            <Button
+              label="Learn More"
+              bgColor="bg-white"
+              borderColor="border-slate-gray"
+              textColor="dark-text-p"
             />
           </div>
         </div>

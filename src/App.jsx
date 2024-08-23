@@ -29,7 +29,7 @@ const App = () => {
       <section className="padding  sm:!pt-0 max-sm:!pt-[6rem]">
         <SpecialOffers />
       </section>
-      <section className="bg-pale-blue padding sm:!pt-0 max-sm:!pt-[6rem]">
+      <section className="bg-pale-blue dark-bg padding sm:!pt-0 max-sm:!pt-[6rem]">
         <CustomerReviews />
       </section>
       <section className="padding-x sm:py-32 py-16 w-full sm:!pt-16 max-sm:!pt-[6rem]">

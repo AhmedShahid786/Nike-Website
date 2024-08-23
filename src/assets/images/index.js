@@ -7,7 +7,8 @@ import customer2 from './customer2.jpg'
 import customer3 from './customer3.jpg'
 
 import footerLogo from './footer-logo.svg'
-import headerLogo from './header-logo.svg'
+import headerLogoLight from "./header-logoLight.svg";
+import headerLogoDark from "./header-logoDark.svg";
 
 import offer from './offer.svg'
 
@@ -32,7 +33,8 @@ export {
     customer3,
 
     footerLogo,
-    headerLogo,
+    headerLogoLight,
+    headerLogoDark,
 
     offer,
     shoe4,

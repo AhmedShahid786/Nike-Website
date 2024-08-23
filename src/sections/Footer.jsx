@@ -16,7 +16,10 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-5 mt-8 ">
             {socialMedia.map((icon) => (
-              <div className="flex justify-center items-center w-12 h-12 bg-white rounded-full">
+              <div
+                className="flex justify-center items-center w-12 h-12 bg-white rounded-full"
+                key={icon.src}
+              >
                 <img src={icon.src} alt={icon.alt} width={24} height={24} />
               </div>
             ))}
@@ -34,9 +37,9 @@ const Footer = () => {
                   {section.links.map((link) => (
                     <li
                       key={link.name}
-                      className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer"
+                      className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:dark-text-p cursor-pointer"
                     >
-                    <a href="/">{link.name}</a>
+                      <a href="/">{link.name}</a>
                     </li>
                   ))}
                 </ul>
@@ -48,17 +51,16 @@ const Footer = () => {
 
       <div className="flex justify-between text-white-400 mt-24 max-sm:flex-col max-sm:items-center">
         <div className="flex flex-1 justify-start items-center gap-2 font-montserrat cursor-pointer">
-          <img 
-          src={copyrightSign} 
-          alt="copyrightsign"
-          width={20}
-          height={20}
-          className="rounded-full m-0"
-           />
+          <img
+            src={copyrightSign}
+            alt="copyrightsign"
+            width={20}
+            height={20}
+            className="rounded-full m-0"
+          />
         </div>
         <p className="font-montserrat cursor-pointer">Terms & Conditions</p>
       </div>
-
     </footer>
   );
 };

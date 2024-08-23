@@ -19,7 +19,7 @@
   }
 
   .input {
-    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal dark-text-p pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
   }
 }
 
@@ -53,6 +53,24 @@
   }
 
   .info-text {
-    @apply font-montserrat text-slate-gray text-lg leading-7;
+    @apply font-montserrat dark-text-p text-lg leading-7;
+  }
+  .dark-text {
+    @apply dark:text-dark-c1;
+  }
+  .dark-text-p {
+    @apply dark:text-slate-50;
+  }
+  .dark-text-special {
+    @apply dark:text-dark-c2;
+  }
+  .dark-bg {
+    @apply dark:bg-dark-cBg;
+  }
+  .dark-bg-button {
+    @apply dark:bg-dark-c2;
+  }
+  .dark-border {
+    @apply dark:border-dark-c2;
   }
 }

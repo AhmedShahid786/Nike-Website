@@ -1,22 +1,44 @@
-const Button = ({label, iconURL, bgColor, borderColor, textColor, fullWidth}) => {
+import { arrowRightDark, arrowRightLight } from "../assets/icons";
+import { useState, useEffect } from "react";
+
+const Button = ({
+  label,
+  iconURL,
+  bgColor,
+  borderColor,
+  textColor,
+  fullWidth,
+}) => {
+  // State to track dark mode status
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Check for saved theme on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
+    }
+  }, []);
+
   return (
     <button
-      className={`w-max m-0 flex justify-center items-center gap-2 px-7 py-4 border-2 font-montserrat text-lg leading-none 
+      className={`w-max m-0 flex justify-center items-center gap-2 px-7 py-4 border-2 font-montserrat text-lg leading-none dark-bg-button dark-border
         ${bgColor ? `${bgColor}` : "bg-coral-red"} 
-        ${borderColor ? `${borderColor}` : "border-coral-red" }
+        ${borderColor ? `${borderColor}` : "border-coral-red"}
         ${textColor ? `${textColor}` : "text-white"}
         rounded-full `}
     >
       {label}
       {iconURL && (
         <img
-          src={iconURL}
+          src={isDarkMode ? arrowRightDark : arrowRightLight}
           className="ml-2 rounded-full w-5 h-5"
           alt="arrow right icon"
         />
       )}
     </button>
   );
-}
+};
 
-export default Button
+export default Button;

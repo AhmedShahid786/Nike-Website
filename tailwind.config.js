@@ -20,6 +20,9 @@ export default {
       },
       colors: {
         primary: "#ECEEFF",
+        "dark-c1": "#38BDF8",
+        "dark-c2": "#C026D3",
+        "dark-cBg" : "#0F172A",
         "coral-red": "#FF6452",
         "slate-gray": "#6D6D6D",
         "pale-blue": "#F5F6FF",
@@ -37,5 +40,6 @@ export default {
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 };
