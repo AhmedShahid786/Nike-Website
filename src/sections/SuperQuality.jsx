@@ -1,13 +1,20 @@
+//? Local imports
 import { Button } from "../components";
 import { shoe8 } from "../assets/images";
 
+//? Hooks imports
+import { useEffect } from "react";
+
 const SuperQuality = () => {
+  
   return (
     <section
       id="aboutUs"
       className="flex justify-between items-center max-lg:flex-col gap-10 w-full max-container"
     >
-      <div className="flex flex-col flex-1">
+      <div 
+      data-aos="fade-right" 
+      className="flex flex-col flex-1">
         <h2 className="font-palanquin text-4xl capitalize max-sm:text[72] max-sm:leading[82] font-bold lg:max-w-lg">
           We Provide You
           <br />
@@ -32,6 +39,7 @@ const SuperQuality = () => {
 
       <div className="flex flex-1 justify-center items-center">
         <img
+          data-aos="fade-left"
           src={shoe8}
           alt="shoe8"
           width={570}

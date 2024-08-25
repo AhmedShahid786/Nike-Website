@@ -23,9 +23,9 @@ const Button = ({
 
   return (
     <button
-      className={`w-max m-0 flex justify-center items-center gap-2 px-7 py-4 border-2 font-montserrat text-lg leading-none dark-bg-button dark-border
-        ${bgColor ? `${bgColor}` : "bg-coral-red"} 
-        ${borderColor ? `${borderColor}` : "border-coral-red"}
+      className={`w-max m-0 flex justify-center items-center gap-2 px-7 py-4 border-2 font-montserrat text-lg leading-none
+        ${bgColor ? `${bgColor}` : "bg-coral-red dark-bg-button"} 
+        ${borderColor ? `${borderColor}` : "border-coral-red dark-border"}
         ${textColor ? `${textColor}` : "text-white"}
         rounded-full `}
     >

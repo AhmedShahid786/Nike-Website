@@ -58,14 +58,13 @@ const Nav = () => {
         <a
           href="/"
           onClick={handleToggle}
-          className="rounded-full border-2 border-slate-gray p-2 mt-[-8px] dark:border-dark-c1"
+          className="rounded-full border-2 border-slate-gray p-2 sm:mt-[-8px] mt-[-4px] dark:border-dark-c1"
         >
           <img
             id="darkToggle"
             src={isDarkMode ? lightToggle : darkToggle}
             alt="Logo"
-            width={30}
-            height={30}
+            className="sm:w-[30px] sm:h-[30px] w-[20px] h-[20px]"
           />
         </a>
 

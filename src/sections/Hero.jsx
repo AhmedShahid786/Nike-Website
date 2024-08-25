@@ -8,54 +8,71 @@ import Typed from "typed.js";
 const Hero = () => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
-  //Typed JS
+  //? Typed JS
   useEffect(() => {
-    // Initialize Typed.js
-    const options = {
-      typeSpeed: 100, // Typing speed in milliseconds
-      backSpeed: 50, // Speed for deleting text
-      backDelay: 1000, // Delay before starting to delete text
-      startDelay: 1000, // Delay before starting typing
-      loop: true, // Loop indefinitely
-      showCursor: false,//Hide Cursor
+    let options = {
+      typeSpeed:70,
+      showCursor: false,
     };
 
-    const option1 = {
-      strings: ["The New Arrival"], // Text you want to type
-      ...options
+    let option1 = {
+      strings: ["The New Arrival"],
+      ...options,
     };
-    const option2 = {
-      strings: ["Nike"], // Text you want to type
-      ...options
+    let option2 = {
+      strings: ["Nike&nbsp;"],
+      ...options,
     };
-    const option3 = {
-      strings: ["Shoes"], // Text you want to type
+    let option3 = {
+      strings: ["Shoes"],
       ...options,
     };
 
-    const typed = new Typed(".typedText", option1, {
-      onComplete: () => {
-        const typed2 = new Typed(".typedText2", {
-          option2,
-          onComplete: () => {
-            const typed3 = new Typed(".typedText3", option3);
-
-            return ()=>{
-              typed.destroy();
-              typed2.destroy();
-              typed3.destroy();
-            }
-          },
-        });
-      },
-    });
-
-    return () => {
-      // Cleanup typed instance on component unmount
-      typed.destroy();
-      // typed2.destroy();
-      // typed3.destroy();
+    let backSpaceOptions = {
+      strings: [""],
+      typeSpeed: 50,
+      backSpeed: 50,
+      showCursor: false,
+      backDelay: 1000,
+      startDelay: 100,
+      loop: false,
     };
+
+    function typing() {
+      const typed1 = new Typed(".typedText1", {
+        ...option1,
+        onComplete: () => {
+          const typed2 = new Typed(".typedText2", {
+            ...option2,
+            onComplete: ()=>{
+              const typed3 = new Typed(".typedText3", {
+                ...option3,
+                onComplete:()=>{
+                //? Backspacing after typed3 completion
+                const typedBackSpace3 = new Typed(".typedText3", {
+                  ...backSpaceOptions,
+                  onComplete : ()=>{
+                    const typedBackSpace2 = new Typed(".typedText2", {
+                  ...backSpaceOptions,
+                  onComplete : ()=>{
+                    const typedBackSpace1 = new Typed(".typedText1", {
+                  ...backSpaceOptions,
+                  onComplete : ()=>{
+                    typing()
+                  }
+                })
+              }
+                })
+                  }
+                })
+              }
+              })
+            }
+          })
+        },
+      });
+    }
+    typing();
   }, []);
 
   return (
@@ -63,22 +80,22 @@ const Hero = () => {
       id="home"
       className="w-full flex flex-col xl:flex-row justify-center min-h-screen gap-10 max-container"
     >
-      <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28">
+      <div className="relative xl:w-2/5 min-h-screen flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28">
         <p className="text-xl font-montserrat text-coral-red dark-text-special">
           Our Summer Collections
         </p>
 
-        <h1 className="mt-10 font-palanquin text-8xl max-sm:text[72] max-sm:leading[82] font-bold">
-          <span className="typedText xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
-            The New Arrival
-          </span>
-          <br />
-          <span className="typedText2 text-coral-red inline-block mt-3 dark-text-special">
-            Nike
-          </span> Shoes
-        </h1>
+        <div className="lg:h-[50dvh] h-[80dvh] w-full">
+          <h1 className="mt-0 font-palanquin text-8xl max-sm:text[72] max-sm:leading[82] font-bold">
+            <span className="typedText1 xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"></span>
+            <br />
+            <span className="typedText2 text-coral-red inline-block mt-3 dark-text-special"></span>
+            <br className="sm:hidden" />
+            <span className="typedText3 whitespace-pre xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"></span>
+          </h1>
+        </div>
 
-        <p className="font-montserrat text-lg dark-text-p text-lg leadig-8 mt-6 max-sm:mb-14 sm:max-w-sm">
+        <p className="animate__animated animate__fadeIn animate__slower font-montserrat text-lg dark-text-p text-lg leadig-8 mt-6 max-sm:mb-14 sm:max-w-sm">
           Discover stylish Nike arrivals, quality comfort and innovation for
           your active life.
         </p>
@@ -88,7 +105,9 @@ const Hero = () => {
         <Button label="Shop Now" iconURL={1} />
       </div>
 
-      <div className="relative max-xl:padding-x flex justify-start items-start flex-wrap w-full xl:mt-20 gap-16">
+      <div 
+      data-aos = "fade-up"
+      className="relative max-xl:padding-x flex justify-start items-start flex-wrap w-full xl:mt-20 gap-16">
         {statistics.map((stat, ind) => (
           <div key={ind}>
             <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
@@ -108,11 +127,16 @@ const Hero = () => {
 
         <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
           {shoes.map((image, index) => (
-            <div key={index}>
+            <div
+              data-aos="fade-left"
+              data-aos-delay={index * 50}
+              ata-aos-easing="ease-out"
+              key={index}
+            >
               <ShoeCard
                 index={index}
                 imgURL={image}
-                changeBigShoeImage={(shoe) => setBigShoeImg(`shoe`)}
+                setBigShoeImage={(shoes) => setBigShoeImg(shoes)}
                 bigShoeImg={bigShoeImg}
               />
             </div>

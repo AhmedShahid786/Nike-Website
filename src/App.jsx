@@ -1,4 +1,15 @@
-import {Nav} from "./components";
+//? Libraries and hooks imports
+import { useEffect } from "react";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+  duration: 1000,
+  once: false,
+});
+
+//? Local imports
+import { Nav } from "./components";
 import {
   CustomerReviews,
   Footer,
@@ -12,7 +23,7 @@ import {
 
 const App = () => {
   return (
-    <main className="relative">
+    <main className="relative overflow-hidden">
       <Nav />
       <section className="xl:padding-l wide:padding-r padding-b">
         <Hero />

@@ -11,10 +11,14 @@ const SpecialOffers = () => {
           alt="SpecialOffer"
           width={773}
           height={687}
+          data-aos="fade-left"
           className="object-contain w-full"
         />
 
-        <div className="flex flex-col flex-1">
+        <div
+          data-aos="fade-right"
+          className="flex flex-col flex-1"
+        >
           <h2 className="font-palanquin text-4xl capitalize max-sm:text[72] max-sm:leading[82] font-bold lg:max-w-lg">
             <span className="text-coral-red dark-text-special">Special </span>
             Offer
@@ -35,7 +39,7 @@ const SpecialOffers = () => {
             <Button label="Shop Now" iconURL={1} />
             <Button
               label="Learn More"
-              bgColor="bg-white"
+              bgColor="bg-white dark-bg"
               borderColor="border-slate-gray"
               textColor="dark-text-p"
             />
