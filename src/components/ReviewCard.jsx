@@ -1,11 +1,15 @@
+//? Local imports (icons,images,data to be displayed)
 import { starLight, starDark } from "../assets/icons";
+
+//? Hooks' imports
 import { useState, useEffect } from "react";
 
+//? Main Component
 const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
-  // State to track dark mode status
+  //? State to track dark mode status
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Check for saved theme on component mount
+  //? Check for saved theme on component mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -16,8 +20,10 @@ const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
 
   return (
     <div
-      className="flex justify-center items-center flex-col"
+      data-aos="zoom-in"
+      data-aos-duration={2000}
       key={customerName}
+      className="flex justify-center items-center flex-col"
     >
       <img
         src={imgURL}

@@ -1,7 +1,8 @@
-// import { arrowRight } from "../assets/icons";
+//? Local imports (icons,images,data to be displayed)
 import { offer } from "../assets/images";
 import { Button } from "../components";
 
+//? Main component
 const SpecialOffers = () => {
   return (
     <section className="flex justify-wrap items-center max-xl:flex-col-reverse gap-10 max-container">
@@ -11,14 +12,11 @@ const SpecialOffers = () => {
           alt="SpecialOffer"
           width={773}
           height={687}
-          data-aos="fade-left"
+          data-aos="fade-up"
           className="object-contain w-full"
         />
 
-        <div
-          data-aos="fade-right"
-          className="flex flex-col flex-1"
-        >
+        <div data-aos="fade-up" className="flex flex-col flex-1">
           <h2 className="font-palanquin text-4xl capitalize max-sm:text[72] max-sm:leading[82] font-bold lg:max-w-lg">
             <span className="text-coral-red dark-text-special">Special </span>
             Offer

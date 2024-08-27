@@ -1,17 +1,21 @@
+//? Local imports (icons,images,data to be displayed)
 import { Button, ShoeCard } from "../components";
 import { shoes, statistics } from "../constants";
 import { bigShoe1 } from "../assets/images";
 
+//? Hooks' and libraries' imports
 import { useState, useEffect } from "react";
 import Typed from "typed.js";
 
+//? Main component
 const Hero = () => {
+  //? State to manage main image of hero scetion
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
-  //? Typed JS
+  //? Typed JS Library
   useEffect(() => {
     let options = {
-      typeSpeed:70,
+      typeSpeed: 70,
       showCursor: false,
     };
 
@@ -44,36 +48,37 @@ const Hero = () => {
         onComplete: () => {
           const typed2 = new Typed(".typedText2", {
             ...option2,
-            onComplete: ()=>{
+            onComplete: () => {
               const typed3 = new Typed(".typedText3", {
                 ...option3,
-                onComplete:()=>{
-                //? Backspacing after typed3 completion
-                const typedBackSpace3 = new Typed(".typedText3", {
-                  ...backSpaceOptions,
-                  onComplete : ()=>{
-                    const typedBackSpace2 = new Typed(".typedText2", {
-                  ...backSpaceOptions,
-                  onComplete : ()=>{
-                    const typedBackSpace1 = new Typed(".typedText1", {
-                  ...backSpaceOptions,
-                  onComplete : ()=>{
-                    typing()
-                  }
-                })
-              }
-                })
-                  }
-                })
-              }
-              })
-            }
-          })
+                onComplete: () => {
+                  //? Backspacing after typed3 completion
+                  const typedBackSpace3 = new Typed(".typedText3", {
+                    ...backSpaceOptions,
+                    onComplete: () => {
+                      const typedBackSpace2 = new Typed(".typedText2", {
+                        ...backSpaceOptions,
+                        onComplete: () => {
+                          const typedBackSpace1 = new Typed(".typedText1", {
+                            ...backSpaceOptions,
+                            onComplete: () => {
+                              typing();
+                            },
+                          });
+                        },
+                      });
+                    },
+                  });
+                },
+              });
+            },
+          });
         },
       });
     }
     typing();
   }, []);
+  //? Typed JS library end
 
   return (
     <section
@@ -85,6 +90,7 @@ const Hero = () => {
           Our Summer Collections
         </p>
 
+        {/* //? Div to display typed js text start */}
         <div className="lg:h-[50dvh] h-[80dvh] w-full">
           <h1 className="mt-0 font-palanquin text-8xl max-sm:text[72] max-sm:leading[82] font-bold">
             <span className="typedText1 xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"></span>
@@ -94,6 +100,7 @@ const Hero = () => {
             <span className="typedText3 whitespace-pre xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"></span>
           </h1>
         </div>
+        {/* //? Typed js div end */}
 
         <p className="animate__animated animate__fadeIn animate__slower font-montserrat text-lg dark-text-p text-lg leadig-8 mt-6 max-sm:mb-14 sm:max-w-sm">
           Discover stylish Nike arrivals, quality comfort and innovation for
@@ -105,9 +112,11 @@ const Hero = () => {
         <Button label="Shop Now" iconURL={1} />
       </div>
 
-      <div 
-      data-aos = "fade-up"
-      className="relative max-xl:padding-x flex justify-start items-start flex-wrap w-full xl:mt-20 gap-16">
+      {/* Statistics start */}
+      <div
+        data-aos="fade-up"
+        className="relative max-xl:padding-x flex justify-start items-start flex-wrap w-full xl:mt-20 gap-16"
+      >
         {statistics.map((stat, ind) => (
           <div key={ind}>
             <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
@@ -117,7 +126,9 @@ const Hero = () => {
           </div>
         ))}
       </div>
+      {/* Statistics end */}
 
+      {/* Hero section images display start */}
       <div className="relative flex flex-1 justify-center items-center xl:min-h-screen max-xl:py-40 sm:py-28 bg-primary bg-hero bg-cover bg-center">
         <img
           src={bigShoeImg}
@@ -143,6 +154,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
+      {/* Hero section images display end */}
     </section>
   );
 };

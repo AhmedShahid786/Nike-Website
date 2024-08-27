@@ -1,7 +1,9 @@
+//? Local imports (icons,images,data to be displayed)
 import { copyrightSign } from "../assets/icons";
 import { footerLogo } from "../assets/images";
 import { footerLinks, socialMedia } from "../constants";
 
+//? Main component
 const Footer = () => {
   return (
     <footer className="max-container">

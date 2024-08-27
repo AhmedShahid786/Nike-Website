@@ -1,5 +1,7 @@
+//? Local imports (icons,images,data to be displayed)
 import { Button } from "../components";
 
+//? Main component
 const Subscribe = () => {
   return (
     <div
@@ -13,7 +15,11 @@ const Subscribe = () => {
       </h3>
 
       <div className="lg:max-w-[45%] w-full flex items-center max-sm:flex-col gap-5 p-2.5 sm:border sm:border-slate-gray rounded-full">
-        <input type="text" placeholder="Subscribe@nike.com" className="input dark-bg" />
+        <input
+          type="text"
+          placeholder="Subscribe@nike.com"
+          className="input dark-bg"
+        />
         <div className="flex max-sm:justify-end items-center max-sm:w-full">
           <Button label={"Sign Up"} />
         </div>

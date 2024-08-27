@@ -5,6 +5,7 @@ import { shoe8 } from "../assets/images";
 //? Hooks imports
 import { useEffect } from "react";
 
+//? Main component
 const SuperQuality = () => {
   
   return (
