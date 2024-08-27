@@ -1,4 +1,12 @@
-## Screenshots
+## 📬 **Connect With Me**
+<a href="https://www.linkedin.com/in/ahmed-shahid-bb6216301/" target="_blank">
+    <img src="./public/readmeAssets/linkedin.png" alt="LinkedIn" width="40" height="40">
+</a>
+<a href="https://www.youtube.com/@ahmedrazashahid9603" target="_blank">
+    <img src="./public/readmeAssets/yt.png" alt="Youtube" width="40" height="40">
+</a>
+
+## Website Overview
 
 ![Home Page](./public/readmeAssets/home.png)
 ![Hero Section](./public/readmeAssets/hero.png)
@@ -60,13 +68,5 @@ Explore the source code and contribute: [ https://github.com/AhmedShahid786/Nike
 ## 📝 **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📬 **Connect With Me**
-<a href="https://www.linkedin.com/in/ahmed-shahid-bb6216301/" target="_blank">
-    <img src="./public/readmeAssets/linkedin.png" alt="LinkedIn" width="40" height="40">
-</a>
-<a href="https://www.youtube.com/@ahmedrazashahid9603" target="_blank">
-    <img src="./public/readmeAssets/yt.png" alt="Youtube" width="40" height="40">
-</a>
 
 For any questions or suggestions, feel free to reach out.
