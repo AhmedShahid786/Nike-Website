@@ -52,6 +52,7 @@
     @apply sm:pb-24 pb-12;
   }
 
+  /* Custom Classes */
   .info-text {
     @apply font-montserrat dark-text-p text-lg leading-7;
   }
