@@ -4,7 +4,10 @@ import chevronLeft from './chevron-left.svg'
 import cheveronRight from './chevron-right.svg'
 import copyrightSign from './copyright-sign.svg'
 import facebook from './facebook.svg'
-import hamburger from './hamburger.svg'
+import menuLight from "./menuLight.png"
+import menuDark from "./menuDark.png"
+import closeMenuLight from "./closeMenuLight.png";
+import closeMenuDark from "./closeMenuDark.png";
 import instagram from './instagram.svg'
 import support from './support.svg'
 import shieldTick from './shield-tick.svg'
@@ -22,7 +25,10 @@ export {
   chevronLeft,
   copyrightSign,
   facebook,
-  hamburger,
+  menuLight,
+  menuDark,
+  closeMenuLight,
+  closeMenuDark,
   instagram,
   support,
   shieldTick,
