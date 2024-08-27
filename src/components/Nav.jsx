@@ -119,6 +119,7 @@ const Nav = () => {
                 <a
                   href={item.href}
                   data-aos="fade-up"
+                  onClick={toggleMenu}
                   className="font-montserrat leading-normal text-2xl dark-text-p dark-text"
                 >
                   {item.label}
@@ -129,7 +130,6 @@ const Nav = () => {
         </div>
       )}
       {/* Full screen navbar menu for mobile screens end*/}
-
     </header>
   );
 };
