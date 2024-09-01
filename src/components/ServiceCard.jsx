@@ -4,11 +4,23 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ServiceCard = ({ index, imgURL, label, subtext }) => {
-  if (index === 0 || index === 2) {
+  const screenWidth = window.innerWidth
+  if(screenWidth > 1280){
+    if (index === 0) {
+      index = "fade-right";
+    } else if (index === 1) {
+      index = "fade-up";
+    } else if (index === 2) {
+      index = "fade-left";
+    }
+  } else {
+    if (index === 0 || index === 2) {
     index = "fade-right";
   } else if (index === 1) {
     index = "fade-left";
   }
+}
+  
   return (
     <div
       data-aos={index}
