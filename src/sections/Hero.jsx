@@ -83,21 +83,21 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full flex flex-col xl:flex-row justify-center min-h-screen gap-10 max-container"
+      className="w-full flex flex-col justify-center min-h-screen gap-10 max-container"
     >
-      <div className="relative xl:w-2/5 min-h-screen flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28">
-        <p className="text-xl font-montserrat text-coral-red dark-text-special">
+      <div className="relative xl:w-2/5 min-h-screen flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
+        <p className="text-xl font-montserrat text-coral-red dark-text-special z-20">
           Our Summer Collections
         </p>
 
         {/* //? Div to display typed js text start */}
-        <div className="lg:h-[50dvh] h-[80dvh] w-full">
-          <h1 className="mt-0 font-palanquin text-8xl max-sm:text[72] max-sm:leading[82] font-bold">
-            <span className="typedText1 xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"></span>
-            <br />
-            <span className="typedText2 text-coral-red inline-block mt-3 dark-text-special"></span>
+        <div className="bg-transparent lg:h-[50dvh] h-[80dvh] w-full">
+          <h1 className="bg-transparent mt-0 font-palanquin text-8xl max-sm:text-[72px] font-bold">
+            <span className="typedText1 bg-transparent xl:whitespace-nowrap relative z-10 pr-10"></span>
             <br className="sm:hidden" />
-            <span className="typedText3 whitespace-pre xl:bg-white xl:whitespace-nowrap relative z-10 pr-10"></span>
+            <span className="typedText2 bg-transparent text-coral-red inline-block mt-3 dark-text-special"></span>
+            <br className="sm:hidden" />
+            <span className="typedText3 bg-transparent  whitespace-pre xl:whitespace-nowrap relative z-10 pr-10"></span>
           </h1>
         </div>
         {/* //? Typed js div end */}
@@ -108,7 +108,7 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="sm:ml-16 ml-8 mt-0">
+      <div className="sm:ml-16 xl:ml-0 ml-8 mt-0">
         <Button label="Shop Now" iconURL={1} />
       </div>
 
